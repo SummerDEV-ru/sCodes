@@ -1,0 +1,49 @@
+# sCodes by Saminolov | t.me/SummerDEV
+# =====================================
+# Команды:
+#   /scode <код>         - активировать промо-код
+#   /scode create        - создать код через чат (интерактивно)
+#   /scode delete <код>  - удалить код
+#   /scode list          - список всех кодов
+#   /scode info <код>    - информация о коде
+#   /scode reload        - перезагрузить конфиг
+#
+# Права:
+#   scodes.use    - использование /scode <код> (по умолчанию: все игроки)
+#   scodes.bypass - обход лимита использований на игрока (по умолчанию: op)
+#
+# create / delete / list / info / reload — только для op-игроков
+#
+# Форматы наград в config:
+#   lp:GROUP       - выдать группу LuckPerms
+#   pp:AMOUNT      - выдать PlayerPoints (релики)
+#   cmd:COMMAND    - команда консоли (%player% = ник игрока)
+
+messages:
+  only-player: '&6Коды &7» &cТолько игрок может использовать эту команду.'
+  usage: '&6Коды &7» &6/code [код] &f- Ввести промокод'
+  no-permission: '&6Коды &7» &cУ вас нет прав!'
+  not-found: '&6Коды &7» &cДанный промокод не найден!'
+  code-success: '&6Коды &7» &aПромо-код успешно активирован!'
+  player-limit-reached: '&6Коды &7» &cВы достигли лимита использований этого кода.'
+  limit-reached: '&6Коды &7» &cВы достигли глобального лимита использований этого кода.'
+  no-commands: '&6Коды &7» &cПроизошла ошибка при активации кода.'
+  global-error: '&6Коды &7» &cПроизошла ошибка при активации кода.'
+  reload: '&6Коды &7» &aКонфиг успешно перезагружен!'
+  code-created: '&6Коды &7» &aПромо-код &6{code} &aуспешно создан!'
+  code-deleted: '&6Коды &7» &aПромо-код &6{code} &aудалён.'
+  cancelled: '&6Коды &7» &cСоздание промо-кода отменено.'
+  no-codes: '&6Коды &7» &7Промо-коды не созданы.'
+
+# Коды создаются здесь или через команду /scode create
+codes:
+  test:
+    player-limit: 1
+    total-limit: 0
+    used-total: 0
+    rewards:
+      - 'pp:100'
+      - 'lp:pegas'
+    message-success: ''
+    message-player-limit: ''
+    message-total-limit: ''

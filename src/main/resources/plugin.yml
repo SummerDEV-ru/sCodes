@@ -1,0 +1,30 @@
+name: sCodes
+author: "Saminolov | t.me/SummerDEV"
+version: 1.0
+main: me.saminolov.scodes.Main
+api-version: "1.13"
+description: "Система промо-кодов с поддержкой LuckPerms и PlayerPoints"
+
+softdepend:
+  - LuckPerms
+  - PlayerPoints
+
+commands:
+  scode:
+    description: Главная команда sCodes
+    usage: /scode <код | create | delete | list | info | reload>
+    aliases:
+      - code
+      - promo
+      - promocode
+
+permissions:
+  scodes.use:
+    description: Активация промо-кодов (/scode <код>)
+    default: true
+  scodes.admin:
+    description: Доступ к create, delete, list, info, reload
+    default: op
+  scodes.bypass:
+    description: Обход лимита использований на игрока
+    default: op
